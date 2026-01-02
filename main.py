@@ -1,8 +1,15 @@
 import caesar_cipher as cc
 
-string = "PUXKN QJRA ANLNREN TRWPMXV"
+text = "PUXKN QJRA ANLNREN TRWPMXV"
 
-cc.decrypt_message(string)
-cc.decrypt_message_with_specific_shift(string, 12)
-cc.encrypt_message(string)
-cc.encrypt_message_with_specific_shift(string, 12)
+results = cc.decrypt_message(text)
+
+for item in results:
+    shift = item[0]
+    candidate = item[1]
+    print("shift =", shift, "message =", candidate)
+
+print("Specific shift: ")
+
+print("decrypt shift 12:", cc.decrypt_message_with_specific_shift(text, 12))
+print("encrypt shift 12:", cc.encrypt_message_with_specific_shift(text, 12))

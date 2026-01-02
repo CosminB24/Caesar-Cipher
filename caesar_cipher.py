@@ -2,7 +2,7 @@ def decrypt_message(message):
     for shift in range(26):
         result = ""
         for char in message:
-            if "a" <= char <= "z":
+            if 'a' <= char <= 'z':
                 result += chr((ord(char) - ord('a') - shift) % 26 + ord('a'))
             elif 'A' <= char <= 'Z':
                 result += chr((ord(char) - ord('A') - shift) % 26 + ord('A'))
@@ -15,7 +15,7 @@ def decrypt_message_with_specific_shift(message, shift):
     for char in message:
         if 'a' <= char <= 'z':
             result += chr((ord(char) - ord('a') - shift) % 26 + ord('a'))
-        elif "A" <= char <= "Z":
+        elif 'A' <= char <= 'Z':
             result += chr((ord(char) - ord("A") - shift) % 26 + ord("A"))
         else:
             result += char
@@ -27,7 +27,7 @@ def encrypt_message(message):
         for char in message:
             if 'a' <= char <= 'z':
                 result += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
-            elif "A" <= char <= "Z":
+            elif 'A' <= char <= 'Z':
                 result += chr((ord(char) - ord("A") + shift) % 26 + ord("A"))
             else:
                 result += char
@@ -38,7 +38,7 @@ def encrypt_message_with_specific_shift(message, shift):
     for char in message:
         if 'a' <= char <= 'z':
             result += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
-        elif "A" <= char <= "Z":
+        elif 'A' <= char <= 'Z':
             result += chr((ord(char) - ord("A") + shift) % 26 + ord("A"))
         else:
             result += char
